@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController {
 
     @GetMapping("/")
-    public String indexInicial(){
+    public String indexInicial() {
         return "index";
     }
 
     @GetMapping("/sobre")
-    public String index(){
+    public String sobre() {
         return "sobre";
     }
 

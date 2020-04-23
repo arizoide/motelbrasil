@@ -22,6 +22,11 @@ public class Motel {
         this.slogan = slogan;
     }
 
+    public Motel(String nome, String slogan) {
+        this.nome = nome;
+        this.slogan = slogan;
+    }
+
     public int getId() {
         return id;
     }
