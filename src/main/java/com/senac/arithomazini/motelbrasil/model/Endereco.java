@@ -1,15 +1,37 @@
 package com.senac.arithomazini.motelbrasil.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Endereco {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column
     private String rua;
+
+    @Column
     private String bairro;
+
+    @Column
     private String cidade;
+
+    @Column
     private String estado;
+
+    @Column
     private String unidadeFederativa;
+
+    @Column
     private String cep;
+
+    @Column
     private String complemento;
+
+    @Column
     private String pontoReferencia;
 
     public Endereco(int id, String rua, String bairro, String cidade, String estado, String unidadeFederativa, String cep, String complemento, String pontoReferencia) {
