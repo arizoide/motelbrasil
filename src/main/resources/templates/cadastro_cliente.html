@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro Clientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <strong>Cadastro de Posts</strong>
+    </div>
+    <div class="panel-body">
+        <form th:object="${cliente}" th:action="@{/salvarCliente}"  method="post">
+            <div>
+                <label>Nome do Cliente</label>
+                <input type="text" th:field="*{nome}"/>
+            </div>
+            <div>
+                <label>CPF</label>
+                <input type="text" th:field="*{cpf}"/>
+            </div>
+            <div>
+                <label>Data de Nascimento</label>
+                <input type="text" th:field="*{dataNascimento}"/>
+            </div>
+            <div>
+                <label>Sexo</label>
+                <input type="text"th:field="*{sexo}"/>
+            </div>
+            <div>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -21,20 +21,6 @@ public class IndexController {
 
     @GetMapping("/")
     public String indexInicial() {
-        Cliente c = new Cliente("Ari", "", Calendar.getInstance().getTime(), "M");
-        clienteDao.save(c);
-
-        Endereco e = new Endereco("Avenida Prudente de Morais",
-                "Vila Santana",
-                "Araraquara",
-                "Sao Paulo",
-                "SP",
-                "14801-170",
-                "casa",
-                "esquina com a 18");
-
-        enderecoDAO.save(e);
-
         return "index";
     }
 
