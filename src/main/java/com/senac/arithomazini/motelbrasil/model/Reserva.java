@@ -1,5 +1,7 @@
 package com.senac.arithomazini.motelbrasil.model;
 
+import javax.persistence.ManyToOne;
+
 public class Reserva {
 
     private int id;

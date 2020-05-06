@@ -29,12 +29,12 @@ public class Endereco {
     private String cep;
 
     @Column
-    private String complemento;
+    private String numero;
 
     @Column
     private String pontoReferencia;
 
-    public Endereco(int id, String rua, String bairro, String cidade, String estado, String unidadeFederativa, String cep, String complemento, String pontoReferencia) {
+    public Endereco(int id, String rua, String bairro, String cidade, String estado, String unidadeFederativa, String cep, String numero, String pontoReferencia) {
         this.id = id;
         this.rua = rua;
         this.bairro = bairro;
@@ -42,19 +42,22 @@ public class Endereco {
         this.estado = estado;
         this.unidadeFederativa = unidadeFederativa;
         this.cep = cep;
-        this.complemento = complemento;
+        this.numero = numero;
         this.pontoReferencia = pontoReferencia;
     }
 
-    public Endereco(String rua, String bairro, String cidade, String estado, String unidadeFederativa, String cep, String complemento, String pontoReferencia) {
+    public Endereco(String rua, String bairro, String cidade, String estado, String unidadeFederativa, String cep, String numero, String pontoReferencia) {
         this.rua = rua;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
         this.unidadeFederativa = unidadeFederativa;
         this.cep = cep;
-        this.complemento = complemento;
+        this.numero = numero;
         this.pontoReferencia = pontoReferencia;
+    }
+
+    public Endereco() {
     }
 
     public int getId() {
@@ -113,19 +116,19 @@ public class Endereco {
         this.cep = cep;
     }
 
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
     public String getPontoReferencia() {
         return pontoReferencia;
     }
 
     public void setPontoReferencia(String pontoReferencia) {
         this.pontoReferencia = pontoReferencia;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 }

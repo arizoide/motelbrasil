@@ -1,10 +1,24 @@
 package com.senac.arithomazini.motelbrasil.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Motel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column
     private String nome;
+
+    @OneToOne
     private Endereco endereco;
+
+    @Column
     private Double nota;
+
+    @Column
     private String slogan;
 
     public Motel(int id, String nome, Endereco endereco, Double nota, String slogan) {
@@ -25,6 +39,9 @@ public class Motel {
     public Motel(String nome, String slogan) {
         this.nome = nome;
         this.slogan = slogan;
+    }
+
+    public Motel() {
     }
 
     public int getId() {

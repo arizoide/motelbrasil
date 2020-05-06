@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro Motel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <strong>Cadastro de Moteis</strong>
+    </div>
+    <div class="panel-body">
+        <form th:object="${motel}" th:action="@{/salvarMotel}"  method="post">
+            <div>
+                <label>Nome do Motel</label>
+                <input type="text" th:field="*{nome}"/>
+            </div>
+            <div>
+                <label>Slogan</label>
+                <input type="text" th:field="*{slogan}"/>
+            </div>
+            <div>
+                <label>Rua</label>
+                <input type="text" th:field="*{endereco.rua}"/>
+            </div>
+            <div>
+                <label>Numero</label>
+                <input type="text"th:field="*{endereco.numero}"/>
+            </div>
+            <div>
+                <label>Bairro</label>
+                <input type="text"th:field="*{endereco.bairro}"/>
+            </div>
+            <div>
+                <label>Cidade</label>
+                <input type="text"th:field="*{endereco.cidade}"/>
+            </div>
+            <div>
+                <label>Estado</label>
+                <input type="text"th:field="*{endereco.estado}"/>
+            </div>
+            <div>
+                <label>UF</label>
+                <input type="text"th:field="*{endereco.unidadeFederativa}"/>
+            </div>
+            <div>
+                <label>CEP</label>
+                <input type="text"th:field="*{endereco.cep}"/>
+            </div>
+            <div>
+                <label>Ponto de Referência</label>
+                <input type="text"th:field="*{endereco.pontoReferencia}"/>
+            </div>
+            <div>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
