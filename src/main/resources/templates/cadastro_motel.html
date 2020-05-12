@@ -5,80 +5,65 @@
     <title>Cadastro Motel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/motelbrasil.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="panel panel-default">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Motel Brasil</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/moteis">Motéis</a></li>
-            <li class="nav-item"><a class="nav-link" href="/sobre">Sobre</a> </li>
-            <li class="nav-item"><a class="nav-link" href="/clientes">Clientes</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastrar</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/cadastroClientes">Cadastrar Cliente</a>
-                    <a class="dropdown-item" href="/cadastroMoteis">Cadastrar Motéis</a>
+    <div class="panel panel-default">
+        <div th:insert="fragments/menu.html"></div>
+        <div class="panel-heading">
+            <strong>Cadastro de Moteis</strong>
+        </div>
+        <div class="panel-body">
+            <form th:object="${motel}" th:action="@{/salvarMotel}"  method="post">
+                <div>
+                    <label>Nome do Motel</label>
+                    <input type="text" th:field="*{nome}"/>
                 </div>
-            </li>
-        </ul>
-    </nav>
-    <div class="panel-heading">
-        <strong>Cadastro de Moteis</strong>
+                <div>
+                    <label>Slogan</label>
+                    <input type="text" th:field="*{slogan}"/>
+                </div>
+                <div>
+                    <label>Rua</label>
+                    <input type="text" th:field="*{endereco.rua}"/>
+                </div>
+                <div>
+                    <label>Numero</label>
+                    <input type="text"th:field="*{endereco.numero}"/>
+                </div>
+                <div>
+                    <label>Bairro</label>
+                    <input type="text"th:field="*{endereco.bairro}"/>
+                </div>
+                <div>
+                    <label>Cidade</label>
+                    <input type="text"th:field="*{endereco.cidade}"/>
+                </div>
+                <div>
+                    <label>Estado</label>
+                    <input type="text"th:field="*{endereco.estado}"/>
+                </div>
+                <div>
+                    <label>UF</label>
+                    <input type="text"th:field="*{endereco.unidadeFederativa}"/>
+                </div>
+                <div>
+                    <label>CEP</label>
+                    <input type="text"th:field="*{endereco.cep}"/>
+                </div>
+                <div>
+                    <label>Ponto de Referência</label>
+                    <input type="text"th:field="*{endereco.pontoReferencia}"/>
+                </div>
+                <div>
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="panel-body">
-        <form th:object="${motel}" th:action="@{/salvarMotel}"  method="post">
-            <div>
-                <label>Nome do Motel</label>
-                <input type="text" th:field="*{nome}"/>
-            </div>
-            <div>
-                <label>Slogan</label>
-                <input type="text" th:field="*{slogan}"/>
-            </div>
-            <div>
-                <label>Rua</label>
-                <input type="text" th:field="*{endereco.rua}"/>
-            </div>
-            <div>
-                <label>Numero</label>
-                <input type="text"th:field="*{endereco.numero}"/>
-            </div>
-            <div>
-                <label>Bairro</label>
-                <input type="text"th:field="*{endereco.bairro}"/>
-            </div>
-            <div>
-                <label>Cidade</label>
-                <input type="text"th:field="*{endereco.cidade}"/>
-            </div>
-            <div>
-                <label>Estado</label>
-                <input type="text"th:field="*{endereco.estado}"/>
-            </div>
-            <div>
-                <label>UF</label>
-                <input type="text"th:field="*{endereco.unidadeFederativa}"/>
-            </div>
-            <div>
-                <label>CEP</label>
-                <input type="text"th:field="*{endereco.cep}"/>
-            </div>
-            <div>
-                <label>Ponto de Referência</label>
-                <input type="text"th:field="*{endereco.pontoReferencia}"/>
-            </div>
-            <div>
-                <button type="submit">Salvar</button>
-            </div>
-        </form>
-    </div>
-</div>
+    <div th:insert="fragments/rodape.html"></div>
 </body>
 </html>
