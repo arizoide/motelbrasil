@@ -11,7 +11,13 @@
 </head>
 <body>
     <div th:insert="fragments/menu.html"></div>
-    <table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Slogan</th>
+            </tr>
+        </thead>
         <tbody>
             <tr th:each="motel : ${moteisCadastrados}">
                 <td th:text="${motel.nome}"></td>
