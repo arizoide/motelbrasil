@@ -16,12 +16,14 @@
             <tr>
                 <th>Nome</th>
                 <th>Slogan</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="motel : ${moteisCadastrados}">
                 <td th:text="${motel.nome}"></td>
                 <td th:text="${motel.slogan}"></td>
+                <td><a th:href="@{/editarMotel/{id} (id=${motel.id})}"><img src="img/edit.svg" alt="Editar"></a></td>
             </tr>
         </tbody>
     </table>
