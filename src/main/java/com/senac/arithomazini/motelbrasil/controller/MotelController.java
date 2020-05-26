@@ -65,4 +65,16 @@ public class MotelController {
 
         return mv;
     }
+
+    @GetMapping("/excluirMotel/{id}")
+    public ModelAndView exluir(@PathVariable("id") Integer id, Motel motel){
+        motelDAO.deleteById(id);
+
+        List<Motel> moteis = motelDAO.findAll();
+
+        ModelAndView mv = new ModelAndView("moteis");
+        mv.addObject("moteisCadastrados", moteis);
+
+        return mv;
+    }
 }

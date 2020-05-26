@@ -19,8 +19,8 @@
         <div class="panel-body">
             <form th:object="${motel}" th:action="@{/salvarMotel}"  method="post">
                 <div>
-                    <label>Nome do Motel</label>
-                    <input type="text" th:field="*{nome}"/>
+                    <label for="nome">Nome do Motel</label>
+                    <input type="text" id="nome" th:field="*{nome}"/>
                 </div>
                 <div>
                     <label>Slogan</label>

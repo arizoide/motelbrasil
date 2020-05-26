@@ -19,27 +19,30 @@
     <div class="panel-body">
         <form th:object="${cliente}" th:action="@{/salvarCliente}"  method="post">
             <div class="form-group">
-                <label>Nome do Cliente</label>
                 <input class="form-control" type="text" th:field="*{nome}" placeholder="Nome do Cliente"/>
             </div>
-            <div>
-                <label>CPF</label>
-                <input class="form-control" type="text" th:field="*{cpf}"/>
+            <div class="form-group">
+                <input class="form-control" type="text" th:field="*{cpf}" placeholder="CPF"/>
             </div>
-            <div>
-                <label>Data de Nascimento</label>
-                <input class="form-control" type="text" th:field="*{dataNascimento}"/>
+            <div class="form-group">
+                <input class="form-control" type="text" th:field="*{dataNascimento}" placeholder="Data de Nascimento"/>
             </div>
-            <div>
-                <label>Sexo</label>
-                <input class="form-control" type="text"th:field="*{sexo}"/>
+            <div class="form-group">
+                <div class="custom-control custom-radio">
+                    <input type="radio" th:field="*{sexo}" class="custom-control-input" name="sexo" value="M" id="masculino"/>
+                    <label  class="custom-control-label" for="masculino">Masculino</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" th:field="*{sexo}" class="custom-control-input" name="sexo" value="F" id="feminino"/>
+                    <label  class="custom-control-label" for="feminino">Feminino</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" th:field="*{sexo}" class="custom-control-input" name="sexo" value="O" id="outro"/>
+                    <label  class="custom-control-label" for="outro">Outro</label>
+                </div>
             </div>
             <div>
                 <button class="btn btn-primary" type="submit">Salvar</button>
-            </div>
-
-            <div>
-                Teste
             </div>
         </form>
     </div>

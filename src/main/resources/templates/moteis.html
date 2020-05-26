@@ -23,7 +23,10 @@
             <tr th:each="motel : ${moteisCadastrados}">
                 <td th:text="${motel.nome}"></td>
                 <td th:text="${motel.slogan}"></td>
-                <td><a th:href="@{/editarMotel/{id} (id=${motel.id})}"><img src="img/edit.svg" alt="Editar"></a></td>
+                <td>
+                    <a th:href="@{/editarMotel/{id} (id=${motel.id})}"><img src="img/edit.svg" alt="Editar"></a>
+                    <a th:href="@{/excluirMotel/{id} (id=${motel.id})}"><img src="img/delete.svg" alt="Excluir"></a>
+                </td>
             </tr>
         </tbody>
     </table>

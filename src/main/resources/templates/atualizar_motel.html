@@ -14,56 +14,56 @@
     <div class="panel panel-default">
         <div th:insert="fragments/menu.html"></div>
         <div class="panel-heading">
-            <strong>Cadastro de Moteis</strong>
+            <p class="display-4">Atualizar Motel</p>
         </div>
         <div class="panel-body">
             <form th:object="${motel}" th:action="@{/atualizarMotel/{id} (id=${motel.id})}"  method="post">
-                <div>
+                <div class="form-group">
                     <label>ID: </label>
                     <label type="text" th:text="*{id}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>Nome do Motel</label>
-                    <input type="text" th:field="*{nome}"/>
+                    <input class="form-control" type="text" th:field="*{nome}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>Slogan</label>
-                    <input type="text" th:field="*{slogan}"/>
+                    <input class="form-control" type="text" th:field="*{slogan}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>Rua</label>
-                    <input type="text" th:field="*{endereco.rua}"/>
+                    <input class="form-control" type="text" th:field="*{endereco.rua}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>Numero</label>
-                    <input type="text"th:field="*{endereco.numero}"/>
+                    <input class="form-control" type="text"th:field="*{endereco.numero}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>Bairro</label>
-                    <input type="text"th:field="*{endereco.bairro}"/>
+                    <input class="form-control" type="text"th:field="*{endereco.bairro}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>Cidade</label>
-                    <input type="text"th:field="*{endereco.cidade}"/>
+                    <input class="form-control" type="text"th:field="*{endereco.cidade}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>Estado</label>
-                    <input type="text"th:field="*{endereco.estado}"/>
+                    <input class="form-control" type="text"th:field="*{endereco.estado}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>UF</label>
-                    <input type="text"th:field="*{endereco.unidadeFederativa}"/>
+                    <input class="form-control" type="text"th:field="*{endereco.unidadeFederativa}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>CEP</label>
-                    <input type="text"th:field="*{endereco.cep}"/>
+                    <input class="form-control" type="text"th:field="*{endereco.cep}"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label>Ponto de Referência</label>
-                    <input type="text"th:field="*{endereco.pontoReferencia}"/>
+                    <input class="form-control" type="text"th:field="*{endereco.pontoReferencia}"/>
                 </div>
                 <div>
-                    <button type="submit">Atualizar</button>
+                    <button class="btn btn-primary" type="submit">Atualizar</button>
                 </div>
             </form>
         </div>
