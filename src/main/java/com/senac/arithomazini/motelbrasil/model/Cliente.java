@@ -1,5 +1,7 @@
 package com.senac.arithomazini.motelbrasil.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
@@ -22,6 +24,7 @@ public class Cliente {
     private String cpf;
 
     @Column
+    @DateTimeFormat(pattern="dd/MM/yyyy hh:mm")
     private Date dataNascimento;
 
     @Column
@@ -79,5 +82,9 @@ public class Cliente {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

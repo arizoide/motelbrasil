@@ -10,7 +10,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div th:insert="fragments/menu.html"></div>
     <table class="table">
         <thead>
             <tr>
@@ -18,14 +17,19 @@
                 <th>CPF</th>
                 <th>Data de Nascimento</th>
                 <th>Sexo</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="cliente : ${clientesCadastrados}">
                 <td th:text="${cliente.nome}"></td>
                 <td th:text="${cliente.cpf}"></td>
-                <td th:text="${cliente.dataNascimento}"></td>
+                <td th:text="${#dates.format(cliente.dataNascimento, 'dd/MM/yyyy || hh:mm')}"></td>
                 <td th:text="${cliente.sexo}"></td>
+                <td>
+                    <a th:href="@{/editar/{id} (id = ${cliente.id})}"><img src="img/edit.svg"></a>
+                    <a th:href="@{/excluir/{id} (id = ${cliente.id})}"><img src="img/delete.svg"></a>
+                </td>
             </tr>
         </tbody>
     </table>
